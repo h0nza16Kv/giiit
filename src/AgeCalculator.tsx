@@ -8,7 +8,7 @@ export default function AgeCalculator() {
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
+        const value =  e.target.value;
         setBirthYear(value);
         if (value && !isNaN(Number(value))) {
             setAge(calcAge(parseInt(value, 10)));
