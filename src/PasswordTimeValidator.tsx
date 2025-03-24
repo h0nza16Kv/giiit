@@ -11,7 +11,7 @@ const PasswordTimeValidator: React.FC<PasswordTimeValidatorProps> = ({
                                                                          password,
                                                                          time,
                                                                          validationWindow = 5000,
-                                                                         debounceTime = 3000 // 1
+                                                                         debounceTime = 3000,
                                                                      }) => {
     const [isValid, setIsValid] = useState<boolean | null>(null);
     const [finalPassword, setFinalPassword] = useState<string | null>(null);
@@ -36,16 +36,17 @@ const PasswordTimeValidator: React.FC<PasswordTimeValidatorProps> = ({
             return;
         }
 
-        const timeElapsed = Date.now() - time;
-        setIsValid(timeElapsed > validationWindow);
+        const isPasswordValid = Date.now() - time > validationWindow;
+        setIsValid(isPasswordValid);
     }, [finalPassword, time, validationWindow]);
 
     return (
         <div>
-            {isValid === null ? (
-                <p></p>
-            ) : (
-                <p>Časová validace hesla: {isValid ? "Platné" : "Neplatné (zadáno příliš rychle)"}</p>
+            {isValid === true && (
+                <p>Heslo bylo zadáno v pořádku</p>
+            )}
+            {isValid === false && (
+                <p>Heslo bylo zadáno příliš rychle</p>
             )}
         </div>
     );
