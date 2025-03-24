@@ -14,7 +14,7 @@ const validatePassword = {
     specialChar: (password: string): string | null =>
         !/[!@#$%^&*]/.test(password) ? "Heslo neobsahuje speciální znak" : null,
     emoji: (password: string): string | null =>
-        !/[😀-🙏]/u.test(password) ? "Heslo neobsahuje emoji" : null,
+            !/[😀-🙏]/u.test(password) ? "Heslo neobsahuje emoji" : null,
 };
 
 const evaluatePassword = (password: string | null): { strength: string; errors: string[] } => {
