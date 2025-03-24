@@ -42,9 +42,6 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
         setPasswordStrength(strength);
     }, [password]);
 
-    useEffect(() => {
-        document.title = `Síla hesla: ${passwordStrength}`;
-    }, [passwordStrength]);
 
     return (
         <div className="alert alert-dark" role="alert">
