@@ -46,6 +46,7 @@ function App() {
             <PasswordStrength password={password}/>
             <CharacterSequenceValidator password={password}/>
             <PasswordTimeValidator password={password} time={passwordTime}/>
+
             <CountryFlagValidator password={password}/>
             <CurrentTemperature/>
 
