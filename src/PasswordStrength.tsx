@@ -47,12 +47,12 @@ const PasswordStrength: React.FC<PasswordStrengthProps> = ({ password }) => {
     }, [passwordStrength]);
 
     return (
-        <div className="alert alert-warning mt-2">
+        <div className="alert alert-dark" role="alert">
             {errors.length === 0 ? (
-                <p className="text-success">Heslo je silné</p>
+                <p className="p-3 mb-2 bg-success text-white">Heslo je silné</p>
             ) : (
                 errors.map((error, index) => (
-                    <p className="text-danger" key={index}>
+                    <p className="p-3 mb-2 bg-danger text-white" key={index}>
                         {error}
                     </p>
                 ))

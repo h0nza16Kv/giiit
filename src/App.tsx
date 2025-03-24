@@ -14,6 +14,7 @@ import viteLogo from '/vite.svg'
 
 
 
+
 function App() {
     const [password, setPassword] = useState<string | null>(null);
     const [passwordTime, setPasswordTime] = useState<number>(Date.now());
@@ -31,26 +32,25 @@ function App() {
     return (
         <>
             <title>HRA S HESLY</title>
-            <h1>Vite + React</h1>
+            <h1 className="display-4">Vite + React</h1>
             <div>
                 <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
+                    <img src={viteLogo} className="logo" alt="Vite logo"/>
                 </a>
                 <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
+                    <img src={reactLogo} className="logo react" alt="React logo"/>
                 </a>
             </div>
-
-            <h1>HRA S HESLY</h1>
-            <PasswordInput passwordValue={password} setter={setPassword} />
+            <h1 className="display-1">HRA S HESLY</h1>
+            <PasswordInput passwordValue={password} setter={setPassword}/>
             <PasswordStrength password={password}/>
             <CharacterSequenceValidator password={password}/>
             <PasswordTimeValidator password={password} time={passwordTime}/>
-            <CountryFlagValidator password={password} />
+            <CountryFlagValidator password={password}/>
             <CurrentTemperature/>
 
         </>
     )
 }
 
-export default App
+export default App;

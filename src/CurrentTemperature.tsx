@@ -7,7 +7,7 @@ const CurrentTemperature: React.FC = () => {
     useEffect(() => {
         const fetchTemperature = async () => {
             try {
-                const response = await fetch('https://wttr.in/Prague?format=%t');
+                const response = await fetch('https://wttr.in/Rudna?format=%t');
                 if (!response.ok) {
                     throw new Error(`HTTP chyba: ${response.status}`);
                 }
@@ -27,7 +27,7 @@ const CurrentTemperature: React.FC = () => {
             {error ? (
                 <p className="text-danger">{error}</p>
             ) : (
-                <p>Aktuální teplota v Praze: {temperature}</p>
+                <p>Aktuální teplota v Rudne: {temperature}</p>
             )}
         </div>
     );
