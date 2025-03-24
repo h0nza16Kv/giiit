@@ -12,14 +12,14 @@ const validatePassword = {
     number: (password: string): string | null =>
         !/[0-9]/.test(password) ? "Heslo neobsahuje číslo" : null,
     specialChar: (password: string): string | null =>
-        !/[!@#$%^&*]/.test(password) ? "Heslo neobsahuje speciální znak" : null,
+        !/[!@#$.%^&*]/.test(password) ? "Heslo neobsahuje speciální znak" : null,
     emoji: (password: string): string | null =>
             !/[😀-🙏]/u.test(password) ? "Heslo neobsahuje emoji" : null,
 };
 
 const evaluatePassword = (password: string | null): { strength: string; errors: string[] } => {
     if (!password) {
-        return { strength: "Slabé", errors: ["Napiš něco"] };
+        return { strength: "Slabé", errors: ["Heslo je prázdné - něco napiš"] };
     }
 
     const errors = Object.values(validatePassword)

@@ -30,6 +30,7 @@ function App() {
 
     return (
         <>
+            <title>HRA S HESLY</title>
             <h1>Vite + React</h1>
             <div>
                 <a href="https://vite.dev" target="_blank">
@@ -39,6 +40,7 @@ function App() {
                     <img src={reactLogo} className="logo react" alt="React logo" />
                 </a>
             </div>
+
             <h1>HRA S HESLY</h1>
             <PasswordInput passwordValue={password} setter={setPassword} />
             <PasswordStrength password={password}/>

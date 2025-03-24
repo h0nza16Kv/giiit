@@ -3,6 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #5e5eff;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: #00ffa7;
+}
+p {
+  color: #ed00ff;
 }
 
 .logo {
